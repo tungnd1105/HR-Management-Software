@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="640.0" prefWidth="1166.0" style="-fx-background-color: #F0F0F0;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.HomeController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="138.0" text="Năm" textFill="#007fff">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cboNam" focusColor="#f3f3f3" prefHeight="60.0" prefWidth="118.0" styleClass="comboxTitle" stylesheets="@../../Libraries/CssMenu.css" unFocusColor="#f3f3f3" />
+         </children>
+      </HBox>
+      <VBox layoutX="63.0" layoutY="42.0" prefHeight="155.0" prefWidth="310.0" style="-fx-background-color: #F3F3F3;" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <HBox prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #e2e2e2;">
+               <children>
+                  <Label fx:id="lblSLNhanVien" alignment="CENTER" prefHeight="110.0" prefWidth="200.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="60.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/nhanvien128x128.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="450.0" style="-fx-background-color: #3AA757;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="45.0" prefWidth="320.0" style="-fx-background-color: #019228;" text="Tổng số lượng nhân viên" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="413.0" layoutY="80.0" prefHeight="155.0" prefWidth="340.0" style="-fx-background-color: #F3F3F3;" AnchorPane.leftAnchor="413.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <HBox prefHeight="110.0" prefWidth="320.0" style="-fx-background-color: #e2e2e2;">
+               <children>
+                  <Label fx:id="lblSoGIoLamViec" alignment="CENTER" prefHeight="110.0" prefWidth="230.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="60.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/three-oclock.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="340.0" style="-fx-background-color: #F37700;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="320.0" text="Tổng số giờ làm việc" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="661.0" layoutY="67.0" prefHeight="155.0" prefWidth="310.0" style="-fx-background-color: #F3F3F3;" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <HBox prefHeight="110.0" prefWidth="310.0" style="-fx-background-color: #e2e2e2;">
+               <children>
+                  <Label fx:id="lblThuNhap" alignment="CENTER" prefHeight="110.0" prefWidth="200.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="60.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="97.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="lblTienLuong1" alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="TỶ" textFill="#004082">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTienLuong11" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="VND" textFill="#004082">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="45.0" prefWidth="320.0" style="-fx-background-color: #004082;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="320.0" text="Tổng tiền lương" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <LineChart fx:id="chartTangTruongNV" layoutX="77.0" layoutY="313.0" minHeight="350.0" minWidth="1086.0" prefHeight="350.0" prefWidth="1086.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="280.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </children>
+</AnchorPane>

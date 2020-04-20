@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.MainController">
+   <children>
+      <BorderPane fx:id="blurPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1366.0" stylesheets="@../../Libraries/CssMenu.css">
+          <top>
+              <HBox fx:id="topPane" onMouseDragged="#movePanel" onMousePressed="#getCoorMouse" prefHeight="80.0" prefWidth="1366.0" style="-fx-background-color: #2a323c;" BorderPane.alignment="CENTER">
+                  <children>
+                  <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #3FA9F5;">
+                     <children>
+                        <ImageView fitHeight="80.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Libraries/icon/Untitled-1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="167.0" translateX="1000.0">
+                     <children>
+                        <VBox prefHeight="80.0" prefWidth="148.0">
+                           <HBox.margin>
+                              <Insets left="968.0" />
+                           </HBox.margin>
+                           <children>
+                              <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="198.0">
+                                 <children>
+                                    <Label id="menu_taikhoan" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#minimizeWindow" prefHeight="30.0" prefWidth="50.0" styleClass="hover_buttonminize">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView id="btn_minize" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" translateY="-3.0">
+                                             <image>
+                                                <Image url="@../../Libraries/icon/minize.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                    <Label id="btn_close" alignment="CENTER" onMouseClicked="#closeWindow" prefHeight="30.0" prefWidth="50.0" styleClass="hover_buttonclose">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView id="btn_power" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" translateY="-3.0">
+                                             <image>
+                                                <Image url="@../../Libraries/icon/close%20(2).png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <MenuButton alignment="BOTTOM_LEFT" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="42.0" prefWidth="3.0" style="-fx-background-color: transparent;">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#openGUIDoimatkhau" text="ĐỔI MẬT KHẨU">
+                                       <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="7.0">
+                                             <image>
+                                                <Image url="@../../Libraries/icon/key.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                  <MenuItem mnemonicParsing="false" onAction="#logOut" text="ĐĂNG XUẤT">
+                                       <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="7.0">
+                                             <image>
+                                                <Image url="@../../Libraries/icon/thoat.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                </items>
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Libraries/icon/user.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </MenuButton>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  </children>
+                  <BorderPane.margin>
+                      <Insets />
+                  </BorderPane.margin>
+              </HBox>
+          </top>
+          <left>
+              <VBox fx:id="leftPane" prefHeight="660.0" prefWidth="200.0" style="-fx-background-color: #2a323c;" BorderPane.alignment="CENTER">
+                  <children>
+                      <HBox layoutX="10.0" layoutY="286.0" prefHeight="34.0" prefWidth="200.0">
+                          <children>
+                              <Label id="menu_trangchu" fx:id="lblHome" onMouseClicked="#setGUIHome" prefHeight="34.0" prefWidth="200.0" text="TRANG CHỦ">
+                                  <font>
+                                      <Font name="Arial" size="15.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@../../Libraries/icon/home.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <HBox.margin>
+                                      <Insets />
+                                  </HBox.margin>
+                                  <padding>
+                                      <Insets bottom="15.0" left="30.0" top="15.0" />
+                                  </padding>
+                           <styleClass>
+                              <String fx:value="hove_border" />
+                              <String fx:value="hover_menu" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                          </children>
+                          <VBox.margin>
+                              <Insets top="61.0" />
+                          </VBox.margin>
+                      </HBox>
+                      <HBox prefHeight="37.0" prefWidth="200.0">
+                          <children>
+                              <Label id="menu_nhanvien" fx:id="lblNhanVien" onMouseClicked="#setGUINhanVien" prefHeight="34.0" prefWidth="200.0" text="NHÂN VIÊN">
+                                  <font>
+                                      <Font name="Arial" size="15.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@../../Libraries/icon/nhanvien.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <padding>
+                                      <Insets bottom="15.0" left="30.0" top="15.0" />
+                                  </padding>
+                                  <HBox.margin>
+                                      <Insets />
+                                  </HBox.margin>
+                           <styleClass>
+                              <String fx:value="hove_border" />
+                              <String fx:value="hover_menu" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                          </children>
+                      </HBox>
+                      <HBox layoutX="10.0" layoutY="94.0" prefHeight="34.0" prefWidth="200.0">
+                          <children>
+                              <Label id="menu_phongban" fx:id="lblToChuc" onMouseClicked="#setGUIToChuc" prefHeight="34.0" prefWidth="200.0" text="TỔ CHỨC">
+                                  <font>
+                                      <Font name="Arial" size="15.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@../../Libraries/icon/tochuc.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <HBox.margin>
+                                      <Insets />
+                                  </HBox.margin>
+                                  <padding>
+                                      <Insets bottom="15.0" left="30.0" top="15.0" />
+                                  </padding>
+                           <styleClass>
+                              <String fx:value="hove_border" />
+                              <String fx:value="hover_menu" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                          </children>
+                      </HBox>
+                      <HBox layoutX="10.0" layoutY="350.0" prefHeight="34.0" prefWidth="200.0">
+                          <children>
+                              <Label id="menu_chamcong" fx:id="lblChamCong" onMouseClicked="#setGUIChamCong" prefHeight="34.0" prefWidth="200.0" text="CHẤM CÔNG">
+                                  <font>
+                                      <Font name="Arial" size="15.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@../../Libraries/icon/chamcong.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <HBox.margin>
+                                      <Insets />
+                                  </HBox.margin>
+                                  <padding>
+                                      <Insets bottom="15.0" left="30.0" top="15.0" />
+                                  </padding>
+                           <styleClass>
+                              <String fx:value="hove_border" />
+                              <String fx:value="hover_menu" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                          </children>
+                      </HBox>
+                      <HBox layoutX="10.0" layoutY="222.0" prefHeight="34.0" prefWidth="200.0">
+                          <children>
+                              <Label id="menu_bangluong" fx:id="lblBangLuong" onMouseClicked="#setGUIBangLuong" prefHeight="34.0" prefWidth="200.0" text="BẢNG LƯƠNG">
+                                  <font>
+                                      <Font name="Arial" size="15.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@../../Libraries/icon/luong.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <HBox.margin>
+                                      <Insets />
+                                  </HBox.margin>
+                                  <padding>
+                                      <Insets bottom="15.0" left="30.0" top="15.0" />
+                                  </padding>
+                           <styleClass>
+                              <String fx:value="hove_border" />
+                              <String fx:value="hover_menu" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                          </children>
+                      </HBox>
+                  <Label id="lblChamcong" fx:id="lblTaiKhoan" onMouseClicked="#setGUITaikhoan" prefHeight="34.0" prefWidth="200.0" text="TÀI KHOẢN">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView id="menu_taikhoan" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                           <image>
+                              <Image url="@../../Libraries/icon/taikhoan.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="15.0" left="30.0" top="15.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="hove_border" />
+                        <String fx:value="hover_menu" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                      <HBox layoutX="10.0" layoutY="380.0" prefHeight="34.0" prefWidth="200.0">
+                     <children>
+                              <Label id="lblChamcong" fx:id="lblKhoiPhuc" onMouseClicked="#setGUIKhoiPhuc" prefHeight="34.0" prefWidth="200.0" text="KHÔI PHỤC">
+                                  <font>
+                                      <Font name="Arial" size="15.0" />
+                                  </font>
+                                  <graphic>
+                                      <ImageView id="menu_taikhoan" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@../../Libraries/icon/khoiphuc.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <padding>
+                                      <Insets bottom="15.0" left="30.0" top="15.0" />
+                                  </padding>
+                           <styleClass>
+                              <String fx:value="hove_border" />
+                              <String fx:value="jfx-tab-pane" />
+                              <String fx:value="hover_menu" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                              </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="70.0" />
+                     </VBox.margin>
+                      </HBox>
+                        <Label id="menu_gioithieu" fx:id="lblGioiThieu" onMouseClicked="#setGUIGioithieu" prefHeight="34.0" prefWidth="200.0" text="GIỚI THIỆU">
+                            <font>
+                                <Font name="Arial" size="15.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                    <image>
+                                        <Image url="@../../Libraries/icon/gioithieu.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets bottom="15.0" left="30.0" top="15.0" />
+                            </padding>
+                     <styleClass>
+                        <String fx:value="hove_border" />
+                        <String fx:value="hover_menu" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </Label>
+                  <HBox prefHeight="34.0" prefWidth="200.0">
+                     <children>
+                        <Label id="lblChamcong" alignment="CENTER" onMouseClicked="#setGUIChamCong" prefHeight="34.0" prefWidth="152.0" style="-fx-text-fill: white;" text="Phiên bản 1.1">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="52.0" />
+                     </VBox.margin>
+                  </HBox>
+                  </children>
+              </VBox>
+          </left>
+         <center>
+            <StackPane fx:id="contentPane" prefHeight="660.0" prefWidth="1166.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

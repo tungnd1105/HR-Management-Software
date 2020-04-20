@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.DoubleValidator?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="640.0" prefWidth="1166.0" stylesheets="@../../Libraries/CssMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.NhanVienController">
+    <children>
+        <JFXTabPane fx:id="tabPane" stylesheets="@../../Libraries/CssMenu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Thống kê">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label text="Thống kê thành phần nhân viên" textFill="#007fff">
+                                            <font>
+                                                <Font name="System Bold" size="32.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <PieChart fx:id="chartTyLeNamNu" labelsVisible="false" layoutX="89.0" layoutY="100.0" prefHeight="445.0" prefWidth="366.0" title="Tỷ lệ giới tính" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="89.0" AnchorPane.topAnchor="100.0" />
+                                <BarChart fx:id="chartSLNhanVien" layoutX="512.0" layoutY="46.0" legendVisible="false" prefHeight="340.0" prefWidth="600.0" title="Số lượng nhân viên theo phòng ban" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="100.0">
+                                    <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                    </yAxis>
+                                </BarChart>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Danh sách">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../Libraries/CssMenu.css">
+                            <children>
+                                <TableView fx:id="tblNhanVien" layoutX="51.0" layoutY="84.0" onMouseClicked="#selectNhanVien" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                                    <padding>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                </TableView>
+                                <JFXButton layoutX="375.0" layoutY="45.0" prefHeight="30.0" prefWidth="110.0" styleClass="btn_timkiem" text="Tìm kiếm " textFill="#fffefe">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0">
+                                            <image>
+                                                <Image url="@../../Libraries/icon/search.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <font>
+                                        <Font name="Arial" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <TextField fx:id="txtTimKiem" layoutX="14.0" layoutY="45.0" prefHeight="30.0" prefWidth="350.0">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font></TextField>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Thông tin nhân viên">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../../Libraries/CssMenu.css">
+                            <children>
+                                <ImageView fx:id="imgHinh" fitHeight="280.0" fitWidth="210.0" layoutX="39.0" layoutY="42.0" onMouseClicked="#chooseImage" pickOnBounds="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="90.0">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <image>
+                                        <Image url="@../../Libraries/icon/MaleEmployee.png" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="271.0" layoutY="20.0" text="Thông tin nhân viên" textFill="#007fff" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+                                    <font>
+                                        <Font name="System Bold" size="32.0" />
+                                    </font>
+                                </Label>
+                                <VBox fx:id="infoPaneNV1" layoutX="271.0" layoutY="82.0" prefHeight="390.0" prefWidth="260.0" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="90.0">
+                                    <children>
+                                        <JFXTextField fx:id="txtMaNV" labelFloat="true" prefHeight="30.0" promptText="Mã nhân viên">
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </JFXTextField>
+                                        <JFXTextField fx:id="txtHoTenNV" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Họ và tên">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXComboBox fx:id="cboGioiTinh" labelFloat="true" prefHeight="30.0" prefWidth="451.0" promptText="Giới tính">
+                                            <VBox.margin>
+                                                <Insets top="36.0" />
+                                            </VBox.margin>
+                                        </JFXComboBox>
+                                        <Label prefHeight="26.0" prefWidth="140.0" text="Ngày sinh">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="1.0" top="12.0" />
+                                            </VBox.margin>
+                                        </Label>
+                                        <DatePicker fx:id="DPickerNgaySinh" editable="false" prefWidth="450.0" />
+                                        <JFXTextField fx:id="txtSoCM" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Số CMND">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                    </children>
+                                </VBox>
+                                <VBox fx:id="infoPaneNV2" layoutX="721.0" layoutY="95.0" prefHeight="385.0" prefWidth="260.0" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="330.0" AnchorPane.topAnchor="90.0">
+                                    <children>
+                                        <JFXTextField fx:id="txtDienThoai" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Số điện thoại">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXTextField fx:id="txtEmail" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Email">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXTextField fx:id="txtDiaChi" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Địa chỉ">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXTextField fx:id="txtTrinhDoHV" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Trình độ học vấn">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXComboBox fx:id="cboTrangThai" labelFloat="true" prefHeight="30.0" prefWidth="451.0" promptText="Trạng thái">
+                                            <VBox.margin>
+                                                <Insets top="40.0" />
+                                            </VBox.margin>
+                                        </JFXComboBox>
+                                    </children>
+                                </VBox>
+                                <VBox fx:id="infoPaneNV3" prefHeight="317.0" prefWidth="260.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="90.0">
+                                    <children>
+                                        <JFXTextField fx:id="txtMaHD" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Mã hợp đồng">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="10.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXComboBox fx:id="cboPhongBan" labelFloat="true" prefHeight="30.0" prefWidth="450.0" promptText="Phòng ban">
+                                            <VBox.margin>
+                                                <Insets top="36.0" />
+                                            </VBox.margin>
+                                        </JFXComboBox>
+                                        <JFXComboBox fx:id="cboChucVu" labelFloat="true" prefHeight="30.0" prefWidth="450.0" promptText="Chức vụ">
+                                            <VBox.margin>
+                                                <Insets top="36.0" />
+                                            </VBox.margin>
+                                        </JFXComboBox>
+                                        <JFXTextField fx:id="txtHeSoLuong" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Hệ số lương">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                                        </JFXTextField>
+                                        <Label prefHeight="26.0" prefWidth="140.0" text="Ngày bắt đầu">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="22.0" />
+                                 </VBox.margin>
+                                        </Label>
+                                        <DatePicker fx:id="DPickerNgayBatDau" editable="false" prefWidth="450.0" />
+                                        <Label prefHeight="26.0" prefWidth="140.0" text="Ngày kết thúc">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" top="12.0" />
+                                 </VBox.margin>
+                                        </Label>
+                                        <DatePicker fx:id="DPickerNgayKetThuc" editable="false" prefWidth="450.0" />
+                                    </children>
+                                </VBox>
+                                <HBox fx:id="paneBottomNV" alignment="CENTER" layoutX="520.0" layoutY="486.0" prefHeight="74.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0">
+                                    <children>
+                                        <JFXButton fx:id="btnThemNV" onAction="#insertNV" prefWidth="124.0" ripplerFill="WHITE" text="Thêm" textAlignment="CENTER" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-primary" />
+                                            </styleClass>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/themmoiNV.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnCapNhatNV" onAction="#updateNV" prefWidth="124.0" ripplerFill="WHITE" text="Cập nhật" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-success" />
+                                            </styleClass>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/capnhatNV.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnXoaNV" onAction="#deleteNV" prefWidth="124.0" ripplerFill="WHITE" text="Xóa" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-danger" />
+                                            </styleClass>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/Xoanv.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnTaoMoiNV" onAction="#newNV" prefWidth="124.0" ripplerFill="WHITE" text="Tạo mới" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-info" />
+                                            </styleClass>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/taomoi24x24.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Thông tin nhân thân">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="281.0" layoutY="30.0" text="Thông tin nhân thân" textFill="#007fff" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+                                    <font>
+                                        <Font name="System Bold" size="32.0" />
+                                    </font>
+                                </Label>
+                                <VBox fx:id="infoPaneNT" prefHeight="295.0" prefWidth="400.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="110.0">
+                                    <children>
+                              <JFXTextField fx:id="txtMaNT" editable="false" focusTraversable="false" labelFloat="true" prefHeight="0.0" prefWidth="400.0" visible="false">
+                                 <font>
+                                    <Font size="1.0" />
+                                 </font>
+                              </JFXTextField>
+                                        <JFXTextField fx:id="txtHoTenNT" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Họ và tên">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXTextField fx:id="txtNgheNghiepNT" focusTraversable="false" labelFloat="true" prefHeight="30.0" promptText="Nghề nghiệp">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="40.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                                        <JFXTextField fx:id="txtMoiQuanHeNT" labelFloat="true" prefHeight="30.0" promptText="Mối quan hệ">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets top="40.0" />
+                                            </VBox.margin>
+                                        </JFXTextField>
+                              <JFXComboBox fx:id="cboGiamTruPhuThuoc" labelFloat="true" prefHeight="30.0" prefWidth="451.0" promptText="Giảm trừ  phụ thuộc">
+                                 <VBox.margin>
+                                    <Insets top="40.0" />
+                                 </VBox.margin>
+                              </JFXComboBox>
+                                    </children>
+                                </VBox>
+                                <TableView fx:id="tblNhanThan" layoutX="485.0" layoutY="77.0" onMouseClicked="#selectNhanThan" prefHeight="270.0" prefWidth="620.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="110.0" />
+                                <HBox fx:id="paneBottomNT" alignment="CENTER" prefHeight="74.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0">
+                                    <children>
+                                        <JFXButton fx:id="btnThemNT" onAction="#insertNT" prefWidth="124.0" ripplerFill="WHITE" text="Thêm" textAlignment="CENTER" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-primary" />
+                                            </styleClass>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/themmoiNV.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnCapNhatNT" onAction="#updateNT" prefWidth="124.0" ripplerFill="#0476c3" text="Cập nhật" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-success" />
+                                            </styleClass>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/capnhatNV.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnXoaNT" onAction="#deleteNT" prefWidth="124.0" ripplerFill="#0476c3" text="Xóa" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-danger" />
+                                            </styleClass>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/Xoanv.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnTaoMoiNT" onAction="#newNT" prefWidth="124.0" ripplerFill="#0476c3" text="Tạo mới" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                            <styleClass>
+                                                <String fx:value="btn" />
+                                                <String fx:value="btn-info" />
+                                            </styleClass>
+                                            <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                            </HBox.margin>
+                                            <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../Libraries/icon/taomoi24x24.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+    </children>
+</AnchorPane>

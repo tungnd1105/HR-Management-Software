@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="350.0" prefWidth="500.0" stylesheets="@../../Libraries/CssMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.FlashController">
+   <children>
+      <VBox prefHeight="350.0" prefWidth="500.0" style="-fx-background-color: #3FA9F5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="290.0" prefWidth="500.0">
+               <children>
+                  <ImageView fitHeight="293.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/logo500.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <ProgressIndicator fx:id="progressIndicator" maxHeight="80.0" maxWidth="536.0" prefHeight="70.0" prefWidth="500.0" progress="0.0">
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </ProgressIndicator>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

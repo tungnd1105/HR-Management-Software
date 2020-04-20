@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.LoginController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../Libraries/CssMenu.css">
+         <children>
+            <StackPane layoutX="184.0" layoutY="100.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="600.0" prefWidth="800.0">
+                     <children>
+                        <VBox prefHeight="600.0" prefWidth="827.0">
+                           <children>
+                              <Pane onMouseDragged="#movePanel" onMousePressed="#getCoorMouse" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2196f3;" />
+                              <Pane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #EDE7F6;" />
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="342.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="114.0">
+                           <children>
+                              <ImageView fitHeight="110.0" fitWidth="110.0" layoutX="188.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="6.0">
+                                 <image>
+                                    <Image url="@../../Libraries/icon/user128x128.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXTextField fx:id="txtTaiKhoan" labelFloat="true" layoutX="75.0" layoutY="140.0" maxWidth="316.0" minWidth="233.0" onKeyPressed="#enterToLogin" prefHeight="31.0" prefWidth="316.0" promptText="Tài khoản" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="130.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXPasswordField fx:id="txtMatKhau" labelFloat="true" layoutX="75.0" layoutY="200.0" maxWidth="316.0" minWidth="235.0" onKeyPressed="#enterToLogin" prefHeight="31.0" prefWidth="316.0" promptText="Mật khẩu" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="200.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <JFXButton fx:id="btnLogin" layoutX="121.0" layoutY="281.0" onAction="#login" prefHeight="34.0" prefWidth="126.0" text="Đăng nhập" textFill="WHITE" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="95.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="btn-primary" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                       <image>
+                                          <Image url="@../../Libraries/icon/dangnhap.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton layoutX="283.0" layoutY="274.0" onAction="#exit" prefHeight="32.0" prefWidth="126.0" text="Thoát" textFill="WHITE" AnchorPane.bottomAnchor="21.0" AnchorPane.rightAnchor="95.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="btn-danger" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                       <image>
+                                          <Image url="@../../Libraries/icon/thoat.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

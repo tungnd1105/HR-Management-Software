@@ -1,0 +1,148 @@
+/*css menu*/
+.hover_menu{
+    -fx-text-fill: #FFF;
+}
+.hove_border:hover{
+    -fx-border-color:   #196bac;
+    -fx-border-width: 0px 0px 0px 10px ;
+    -fx-background-color: #03a9f4;
+}
+.hover_buttonclose:hover{
+    -fx-background-color: #e81123;
+}
+.hover_buttonminize:hover{
+    -fx-background-color:#696969;
+}
+.hover_menuActive{
+    -fx-border-color:   #196bac;
+    -fx-border-width: 0px 0px 0px 10px ;
+    -fx-background-color: #03a9f4;
+}
+
+
+/*button style*/
+.btn{
+    -fx-text-fill: #fff;
+}
+.btn-primary{
+    -fx-background-color: #007bff;
+}
+.btn-primary:hover{
+    -fx-background-color: #0069d9;
+}
+.btn-danger{
+    -fx-background-color:#dc3545;
+}
+.btn-danger:hover{
+    -fx-background-color:#c82333;
+}
+.btn-success{
+    -fx-background-color:#28a745;
+}
+.btn-success:hover{
+    -fx-background-color:#218838;
+}
+.btn-info{
+    -fx-background-color:#17a2b8;
+}
+.btn-info:hover{
+    -fx-background-color:#138496;
+}
+
+/*jfx-tab-pane style*/
+.jfx-tab-pane .headers-region {
+    -fx-background-color: #03A9F4;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #03A9F4;
+}
+.jfx-tab-pane .tab-selected-line {
+    -fx-stroke: #75bc1b;
+    -fx-stroke-width: 3pt;
+}
+/*table style*/
+.table-view{
+    -fx-padding: 0 0 0 0;
+    -fx-background-color: transparent;
+    -fx-border-color: #03a9f4;
+    -fx-border-width: 2 2 2 2;
+}
+.table-view .column-header {
+    -fx-border-color: gray;
+    -fx-border-width: 0.2;
+    -fx-alignment: CENTER;
+    -fx-background-color: #03a9f4;
+}
+
+.table-view .column-header-background .label{
+    -fx-text-fill: #FFF;
+    -fx-padding: 14 0 14 0;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER_LEFT;
+    -fx-cell-size: 20px;
+}
+
+
+.table-view:focused .table-row-cell:selected{
+    -fx-background-color: #48C1F7;
+    -fx-table-cell-border-color: #48C1F7;
+    -fx-text-fill: #000000;
+}
+
+.table-view:focused .table-row-cell:selected .table-cell {
+    -fx-text-fill: #000000;
+}
+
+/*menu style*/
+.context-menu {
+    -fx-padding: 7 0 0 0;
+    -fx-background-color: #2a323c;
+}
+.menu-item{
+    -fx-background-color: #2a323c;  
+}
+
+.menu-item .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 10 15 10 15;
+}
+
+.menu-item:focused {
+    -fx-background-color: #03A9F4;
+}
+
+.menu-item:focused .label {
+    /*-fx-text-fill: blue;*/
+}
+
+
+.btn_timkiem{
+    -fx-background-color:#007bff;
+    
+}
+.btn_timkiem:hover{
+    -fx-background-color: #0069d9;
+   
+}
+
+/*combo-box style*/
+.combo-box.comboxTitle .list-cell{
+    -fx-font-size: 24pt;
+    -fx-text-fill: #007fff;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 10;
+}
+
+/*error style*/
+.error-label{
+    -fx-font-size: 8pt;
+}
+
+/*chart style*/
+.chart-title {
+  -fx-text-alignment: center;
+  -fx-font-weight: bold;
+}

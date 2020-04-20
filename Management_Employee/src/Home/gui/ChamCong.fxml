@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="640.0" prefWidth="1166.0" stylesheets="@../../Libraries/CssMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.ChamCongController">
+    <children>
+        <JFXTabPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Thống kê">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1166.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Label prefHeight="47.0" prefWidth="418.0" text="Thống kê chuyên cần tháng" textFill="#007fff">
+                                            <font>
+                                                <Font name="System Bold" size="32.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXComboBox fx:id="cboThang1" focusColor="#f3f3f3" prefHeight="78.0" prefWidth="80.0" styleClass="comboxTitle" unFocusColor="#f3f3f3" visibleRowCount="6" />
+                                        <Label prefHeight="47.0" prefWidth="66.0" text="năm" textFill="#007fff">
+                                            <font>
+                                                <Font name="System Bold" size="32.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXComboBox fx:id="cboNam1" focusColor="#f3f3f3" prefHeight="60.0" prefWidth="118.0" styleClass="comboxTitle" unFocusColor="#f3f3f3" />
+                                    </children>
+                                </HBox>
+                                <PieChart fx:id="chuyenCanChart" labelsVisible="false" layoutX="52.0" layoutY="120.0" title="Biểu đồ tỷ lệ nhân viên đi làm đầy đủ" />
+                                <PieChart fx:id="soNgayLamViecChart" labelsVisible="false" layoutX="616.0" layoutY="120.0" title="Biểu đồ tỷ lệ ngày làm việc" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Bảng chấm công">
+                    <content>
+                        <AnchorPane>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1166.0">
+                                    <children>
+                                        <Label prefHeight="47.0" prefWidth="348.0" text="Bảng chấm công tháng" textFill="#007fff">
+                                            <font>
+                                                <Font name="System Bold" size="32.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXComboBox fx:id="cboThang2" focusColor="#f3f3f3" prefHeight="78.0" prefWidth="80.0" styleClass="comboxTitle" unFocusColor="#f3f3f3" visibleRowCount="6" />
+                                        <Label prefHeight="47.0" prefWidth="69.0" text="năm" textFill="#007fff">
+                                            <font>
+                                                <Font name="System Bold" size="32.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXComboBox fx:id="cboNam2" focusColor="#f3f3f3" prefHeight="60.0" prefWidth="118.0" styleClass="comboxTitle" unFocusColor="#f3f3f3" />
+                                    </children>
+                                </HBox>
+                                <JFXButton layoutX="396.0" layoutY="100.0" onAction="#loadTableWithSearch" prefHeight="30.0" prefWidth="110.0" styleClass="btn_timkiem" text="Tìm kiếm " textFill="#fffefe" AnchorPane.leftAnchor="396.0" AnchorPane.topAnchor="100.0">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0">
+                                            <image>
+                                                <Image url="@../../Libraries/icon/search.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <font>
+                                        <Font name="Arial" size="13.0" />
+                                    </font>
+                                </JFXButton>
+                                <TextField fx:id="txtTimKiem" layoutX="14.0" layoutY="100.0" prefHeight="30.0" prefWidth="350.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="100.0" />
+                                <TableView fx:id="tblChamCong" editable="true" layoutX="10.0" layoutY="140.0" prefHeight="451.0" prefWidth="1146.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="140.0" />
+                        <JFXButton layoutX="1025.0" layoutY="100.0" onAction="#update" prefHeight="30.0" prefWidth="110.0" text="Cập nhật" textFill="#fffefe" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="100.0">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0">
+                                 <image>
+                                    <Image url="@../../Libraries/icon/capnhat.png" />
+                                 </image></ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="btn-success" />
+                           </styleClass>
+                        </JFXButton>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+    </children>
+</AnchorPane>

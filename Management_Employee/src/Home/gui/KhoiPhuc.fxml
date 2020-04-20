@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="640.0" prefWidth="1166.0" stylesheets="@../../Libraries/CssMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.KhoiPhucController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="583.0" text="Khôi phục cơ sở dữ liệu" textFill="#007fff">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <JFXButton alignment="CENTER" layoutX="488.0" layoutY="431.0" onAction="#restore" prefHeight="57.0" prefWidth="190.0" style="-fx-font-weight: bold; -fx-font-size: 18;" text="Khôi phục" AnchorPane.leftAnchor="488.0" AnchorPane.rightAnchor="488.0" AnchorPane.topAnchor="431.0">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-danger" />
+         </styleClass>
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Libraries/icon/restore.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="100.0" layoutY="285.0" prefHeight="35.0" prefWidth="220.0" text="Differential backup" textFill="#ff6000" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="159.0" layoutY="207.0" prefHeight="35.0" prefWidth="220.0" text="Full backup" textFill="#ff1600" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtFullBackup" editable="false" focusTraversable="false" layoutX="391.0" layoutY="207.0" prefHeight="35.0" prefWidth="430.0" style="-fx-text-fill: #ff1600;" AnchorPane.leftAnchor="335.0" />
+      <TextField fx:id="txtDiffBackup" editable="false" focusTraversable="false" layoutX="335.0" layoutY="285.0" prefHeight="35.0" prefWidth="430.0" style="-fx-text-fill: #ff6000;" AnchorPane.leftAnchor="335.0" />
+      <JFXButton alignment="CENTER" layoutX="916.0" layoutY="285.0" onAction="#deleteDiffBackupFile" prefHeight="35.0" prefWidth="150.0" text="Bỏ chọn File" AnchorPane.rightAnchor="80.0">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Libraries/icon/remove-folder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-danger" />
+         </styleClass>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="CENTER" layoutX="776.0" layoutY="285.0" onAction="#chooseDiffBackupFile" prefHeight="35.0" prefWidth="130.0" text="Chọn File" AnchorPane.rightAnchor="240.0">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-primary" />
+         </styleClass>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Libraries/icon/open-add-folder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="CENTER" layoutX="991.0" layoutY="207.0" onAction="#deleteFullBackupFile" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #DA1E1E;" text="Bỏ chọn File" AnchorPane.rightAnchor="80.0">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-danger" />
+         </styleClass>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Libraries/icon/remove-folder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="CENTER" layoutX="847.0" layoutY="207.0" onAction="#chooseFullBackupFile" prefHeight="35.0" prefWidth="130.0" text="Chọn File" AnchorPane.rightAnchor="240.0">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn-primary" />
+         </styleClass>
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Libraries/icon/open-add-folder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

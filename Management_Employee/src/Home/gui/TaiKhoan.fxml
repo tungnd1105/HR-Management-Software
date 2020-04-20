@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="640.0" prefWidth="1166.0" stylesheets="@../../Libraries/CssMenu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.TaiKhoanController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Quản lý tài khoản đăng nhập" textFill="#007fff">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox layoutX="30.0" layoutY="84.0" prefHeight="400.0" prefWidth="400.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <JFXTextField fx:id="txtTaikhoan" labelFloat="true" prefHeight="30.0" prefWidth="400.0" promptText="Tài khoản">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtMatKhau" labelFloat="true" prefHeight="30.0" prefWidth="400.0" promptText="Mật khẩu">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="txtXacNhanMatKhau" labelFloat="true" prefHeight="30.0" prefWidth="400.0" promptText="Xác nhận mật khẩu">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXComboBox fx:id="cboPhongBan" labelFloat="true" prefHeight="30.0" prefWidth="400.0" promptText="Phòng ban">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cboNhanVien" prefHeight="30.0" prefWidth="400.0" promptText="Nhân viên">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </JFXComboBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tblTaiKhoan" layoutX="405.0" layoutY="110.0" onMouseClicked="#selectTaiKhoan" prefHeight="300.0" prefWidth="600.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="160.0" />
+      <HBox alignment="CENTER" layoutY="545.0" prefHeight="96.0" prefWidth="1166.0">
+         <children>
+            <JFXButton fx:id="btnThem" onAction="#InsertTK" prefWidth="124.0" ripplerFill="WHITE" text="Thêm" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-primary" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/themmoiNV.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnCapNhat" onAction="#updateTK" prefWidth="124.0" ripplerFill="WHITE" text="Cập nhật" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-success" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/capnhatNV.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnXoa" onAction="#DeleteTK" prefWidth="124.0" ripplerFill="WHITE" text="Xóa" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-danger" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/Xoanv.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnTaoMoi" onAction="#clearTK" prefWidth="124.0" ripplerFill="WHITE" text="Tạo mới" textAlignment="CENTER" translateX="1.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn-info" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Libraries/icon/taomoi24x24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

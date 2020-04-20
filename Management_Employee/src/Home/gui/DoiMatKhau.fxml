@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import java.lang.String?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.controller.DoiMatKhauController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../Libraries/CssMenu.css">
+         <children>
+            <StackPane layoutX="184.0" layoutY="100.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="600.0" prefWidth="827.0">
+                           <children>
+                              <Pane onMouseDragged="#movePanel" onMousePressed="#getCoorMouse" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2196f3;" />
+                              <Pane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #EDE7F6;" />
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="400.0" prefWidth="469.0" style="-fx-background-color: WHITE; -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5); -fx-background-radius: 4; -fx-border-radius: 4; -fx-padding: 8;" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="80.0">
+                           <children>
+                              <ImageView fitHeight="110.0" fitWidth="110.0" layoutX="188.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="6.0">
+                                 <image>
+                                    <Image url="@../../Libraries/icon/user128x128.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXPasswordField fx:id="txtMatKhauCu" labelFloat="true" layoutX="85.0" layoutY="210.0" maxWidth="316.0" minWidth="235.0" onKeyPressed="#enterToChange" prefHeight="31.0" prefWidth="316.0" promptText="Mật khẩu cũ" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="130.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <JFXPasswordField fx:id="txtMatKhauMoi" labelFloat="true" layoutX="84.0" layoutY="210.0" maxWidth="316.0" minWidth="235.0" onKeyPressed="#enterToChange" prefHeight="31.0" prefWidth="316.0" promptText="Mật khẩu" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="190.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <JFXPasswordField fx:id="txtXacNhanMatKhau" labelFloat="true" layoutX="94.0" layoutY="220.0" maxWidth="316.0" minWidth="235.0" onKeyPressed="#enterToChange" prefHeight="31.0" prefWidth="316.0" promptText="Xác nhân mật khẩu" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="250.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXPasswordField>
+                              <JFXButton fx:id="btnConfirm" layoutX="121.0" layoutY="281.0" onAction="#changePassword" prefHeight="34.0" prefWidth="126.0" text="Xác nhận" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="95.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="btn-primary" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                       <image>
+                                          <Image url="@../../Libraries/icon/xacnhan.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton layoutX="283.0" layoutY="274.0" onAction="#cancel" prefHeight="32.0" prefWidth="126.0" text="Hủy" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="95.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn" />
+                                    <String fx:value="btn-danger" />
+                                 </styleClass>
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                       <image>
+                                          <Image url="@../../Libraries/icon/huy.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
